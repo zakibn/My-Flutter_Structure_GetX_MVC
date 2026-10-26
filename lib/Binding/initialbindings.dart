@@ -7,5 +7,6 @@ class InitialBindings extends Bindings {
   void dependencies() {
     // Example:
     // Get.put<MyService>(MyService(), permanent: true);
+    Get.put(Crud());
   }
 }
