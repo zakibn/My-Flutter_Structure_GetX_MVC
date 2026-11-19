@@ -1,4 +1,5 @@
-import '../class/statusrequest.dart';
+//import '../class/statusrequest.dart';
+import 'package:auth/core/class/statusrequest.dart';
 
 handlingData(response) {
   if (response is StatusRequest) {

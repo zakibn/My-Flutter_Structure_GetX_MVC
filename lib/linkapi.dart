@@ -1,6 +1,8 @@
 class AppLink {
   // static const String server = "https://waelabohamza.com/ecommercee";
-  static const String server = "https://b2b-go.com/ecommerce";
+  // static const String server = "https://b2b-go.com/ecommerce";
+  //  Local Server  ipconfig
+  static const String server = "http://192.168.210.32/ecommerce/";
 
   static const String imageststatic = "https://b2b-go.com/ecommerce/upload";
   // static const String imageststatic = "https://waelabohamza.com/ecommercee/upload";

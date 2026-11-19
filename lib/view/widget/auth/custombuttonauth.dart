@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/Constant/color.dart';
+import '../../../core/constant/color.dart';
 
 class CustomButtomAuth extends StatelessWidget {
   final String text;

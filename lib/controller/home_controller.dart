@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  final title = 'Flutter Structure — GetX MVC';
+  final title = '39'.tr;
 }

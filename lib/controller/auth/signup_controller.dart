@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-import '../core/Class/statusrequest.dart';
-import '../core/functions/handingdatacontroller.dart';
-import '../data/datasource/remote/signup.dart';
+//import '../core/Class/statusrequest.dart';
+import 'package:auth/core/class/statusrequest.dart';
+import '../../core/constant/app_routes.dart';
+import '../../core/functions/handingdatacontroller.dart';
+import '../../data/datasource/remote/auth/signup.dart';
 
 abstract class SignUpController extends GetxController {
   signUp();
@@ -18,12 +20,12 @@ class SignUpControllerImp extends SignUpController {
   late TextEditingController phone;
   late TextEditingController password;
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   SignupData signupData = SignupData(Get.find());
 
   List data = [];
-
+  /* 
   @override
   signUp() async {
     if (formstate.currentState!.validate()) {
@@ -40,7 +42,10 @@ class SignUpControllerImp extends SignUpController {
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
           // data.addAll(response['data']);
-          //  Get.offNamed(AppRoute.verfiyCodeSignUp  ,arguments: {"email" : email.text });
+          Get.offNamed(
+            AppRoutes.verfiyCodeSignUp,
+            arguments: {"email": email.text},
+          );
         } else {
           Get.defaultDialog(
             title: "ُWarning",
@@ -52,10 +57,47 @@ class SignUpControllerImp extends SignUpController {
       update();
     } else {}
   }
+ */
+
+  @override
+  signUp() async {
+    if (formstate.currentState!.validate()) {
+      statusRequest = StatusRequest.loading;
+      update();
+
+      var response = await signupData.postdata(
+        username.text,
+        password.text,
+        email.text,
+        phone.text,
+      );
+
+      print("=============================== Controller $response");
+
+      statusRequest = handlingData(response);
+
+      if (StatusRequest.success == statusRequest) {
+        if (response['status'] == "success") {
+          Get.offNamed(
+            AppRoutes.verfiyCodeSignUp,
+            arguments: {"email": email.text},
+          );
+        } else {
+          Get.defaultDialog(
+            title: "Warning",
+            middleText: "Phone Number Or Email Already Exists",
+          );
+          statusRequest = StatusRequest.failure;
+        }
+      }
+
+      update();
+    }
+  }
 
   @override
   goToSignIn() {
-    //  Get.offNamed(AppRoute.login);
+    Get.offNamed(AppRoutes.login);
   }
 
   @override

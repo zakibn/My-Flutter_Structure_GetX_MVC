@@ -1,4 +1,4 @@
-/* import 'package:get/get.dart';
+import 'package:get/get.dart';
 
 validInput(String val, int min, int max, String type) {
   if (type == "username") {
@@ -30,4 +30,3 @@ validInput(String val, int min, int max, String type) {
     return "can't be larger than $max";
   }
 }
- */

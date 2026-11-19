@@ -1,5 +1,5 @@
-import '../../../core/Class/crud.dart';
-import '../../../linkapi.dart';
+import '../../../../core/class/crud.dart';
+import '../../../../linkapi.dart';
 
 class SignupData {
   Crud crud;

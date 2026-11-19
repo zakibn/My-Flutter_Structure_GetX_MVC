@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'core/Constant/app_routes.dart';
+import 'Binding/initialbindings.dart';
+import 'core/constant/app_routes.dart';
 import 'core/localization/changelocal.dart';
 import 'core/localization/translation.dart';
 import 'core/services/services.dart';
@@ -18,18 +19,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     LocaleController controller = Get.put(LocaleController());
+    LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Structure',
-       locale: controller.language,
-       translations: MyTranslation(),
-      // theme: controller.appTheme,
-      theme: ThemeData(
+      title: '39'.tr,
+      locale: controller.language,
+      translations: MyTranslation(),
+      theme: controller.appTheme,
+      /* theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
-      ),
-      initialRoute: AppRoutes.home,
+      ), */
+      // initialRoute: AppRoutes.home,
+      initialBinding: InitialBindings(),
       getPages: AppPages.pages,
     );
   }

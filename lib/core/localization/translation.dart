@@ -44,6 +44,8 @@ class MyTranslation extends Translations {
       "36": "تم اعادة تعيين كلمة المرور بنجاح",
       "37": "تهانينا",
       "38": "تم التسجيل بنجاح",
+      "39": " هيكلة فلاتر ",
+      "40": " توصيل سريع",
     },
     "en": {
       "1": "Choose Language",
@@ -86,6 +88,8 @@ class MyTranslation extends Translations {
       "36": "Password has been reset successfully",
       "37": "congratulations",
       "38": "successfully registered",
+      "39": "Flutter Structure",
+      "40": "Fast Delivery",
     },
   };
 }

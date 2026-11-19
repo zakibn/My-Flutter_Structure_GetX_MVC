@@ -9,7 +9,7 @@ class HomeScreen extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Flutter Structure')),
+      appBar: AppBar(title: Text('39'.tr)),
       body: Center(
         child: Text(
           controller.title,

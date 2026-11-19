@@ -13,6 +13,9 @@ class Crud {
       print(response.statusCode);
 
       if (response.statusCode == 200 || response.statusCode == 201) {
+        print("HTTP Status: ${response.statusCode}");
+        print("SERVER RESPONSE: ${response.body}");
+
         Map responsebody = jsonDecode(response.body);
         print(responsebody);
 

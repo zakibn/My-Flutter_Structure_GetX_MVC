@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
+import '../../core/constant/app_routes.dart';
 import '../../core/localization/changelocal.dart';
 import '../widget/language/custombuttomlang.dart';
 
@@ -22,14 +23,15 @@ class Language extends GetView<LocaleController> {
               textbutton: "Ar",
               onPressed: () {
                 controller.changeLang("ar");
-              //  Get.toNamed(AppRoute.onBoarding);
+                Get.toNamed(AppRoutes.onBoarding);
               },
             ),
+            const SizedBox(height: 2),
             CustomButtonLang(
               textbutton: "En",
               onPressed: () {
                 controller.changeLang("en");
-             //   Get.toNamed(AppRoute.onBoarding);
+                Get.toNamed(AppRoutes.onBoarding);
               },
             ),
           ],
